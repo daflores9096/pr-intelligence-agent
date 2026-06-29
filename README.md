@@ -125,6 +125,7 @@ Runs 3 automated cases (baseline, prompt injection, zero-retrieval fallback) and
 | `npm run typecheck` | TypeScript type check |
 | `npm run build` | Compile to `dist/` |
 | `npm run docs:pdf` | Generate TDD PDF (`docs/PR-Intelligence-Agent-TDD.pdf`) |
+| `npm run docs:eval-pdf` | Generate Evaluation Evidence PDF |
 
 ---
 
@@ -246,8 +247,10 @@ npm run typecheck
 | Document | Location |
 |---|---|
 | Technical Design Document (PDF) | `docs/PR-Intelligence-Agent-TDD.pdf` |
+| Evaluation Evidence (PDF) | `docs/PR-Intelligence-Agent-Evaluation-Evidence.pdf` |
 | TDD source (Markdown) | `docs/TDD.md` |
-| Evaluation guide | `docs/evaluation.md` |
+| Evaluation Evidence (Markdown) | `docs/Evaluation-Evidence.md` |
+| Evaluation runbook | `docs/evaluation.md` |
 
 ---
 

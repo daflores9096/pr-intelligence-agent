@@ -1,5 +1,7 @@
 # Evaluation Guide (LangSmith + Local Checks)
 
+> **Full evaluation document:** `docs/Evaluation-Evidence.md` (source) and `docs/PR-Intelligence-Agent-Evaluation-Evidence.pdf` (PDF with screenshots).
+
 This project includes an evaluation harness to produce evidence for the Engineering Review.
 
 ## 1) Enable LangSmith

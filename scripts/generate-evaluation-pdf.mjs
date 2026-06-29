@@ -9,11 +9,11 @@ const { mdToPdf } = require("md-to-pdf");
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 
-const input = join(root, "docs", "TDD-print.md");
+const input = join(root, "docs", "Evaluation-Evidence-print.md");
 const stylesheet = join(root, "docs", "tdd-pdf.css");
-const output = join(root, "docs", "PR-Intelligence-Agent-TDD.pdf");
+const output = join(root, "docs", "PR-Intelligence-Agent-Evaluation-Evidence.pdf");
 
-console.log("Generating PDF...");
+console.log("Generating Evaluation Evidence PDF...");
 console.log(`  Input:  ${input}`);
 console.log(`  Output: ${output}`);
 
