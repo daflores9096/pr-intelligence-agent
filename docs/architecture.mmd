@@ -1,0 +1,14 @@
+flowchart LR
+    U[User / CLI Input] --> I[Ingestion: Jira + Diff + Docs]
+    I --> S[Parent-Child Splitter]
+    S --> E[Embedding Model]
+    E --> VS[(Pinecone Vector Store)]
+    U --> Q[Query Builder]
+    Q --> R[Contextual Compression Retriever]
+    VS --> R
+    R --> PDR[Parent Document Resolver]
+    PDR --> O[LCEL Orchestrator]
+    O --> LLM[gpt-4o-mini]
+    LLM --> OP[Output Parser / Zod]
+    OP --> OUT[PR Markdown]
+    O --> LS[LangSmith Traces]

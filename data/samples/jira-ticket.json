@@ -1,0 +1,13 @@
+{
+  "key": "ENG-1427",
+  "summary": "Add retry policy for payment webhook processing",
+  "description": "Payment provider webhooks are intermittently failing during peak traffic. We need exponential backoff retries and dead-letter handling for failed events.",
+  "acceptanceCriteria": [
+    "Webhook handler retries transient failures up to 5 times",
+    "Failed events are persisted to a dead-letter queue",
+    "Retry metrics are emitted for observability",
+    "No duplicate charge side effects on replay"
+  ],
+  "labels": ["payments", "reliability", "backend"],
+  "component": "billing-service"
+}

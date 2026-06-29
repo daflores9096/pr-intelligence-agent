@@ -1,0 +1,18 @@
+diff --git a/src/webhooks/paymentWebhookHandler.ts b/src/webhooks/paymentWebhookHandler.ts
+index 2ab91fd..8c44f21 100644
+--- a/src/webhooks/paymentWebhookHandler.ts
++++ b/src/webhooks/paymentWebhookHandler.ts
+@@ -1,8 +1,12 @@
+ import { processPaymentEvent } from "../payments/processPaymentEvent";
++import { withExponentialBackoff } from "../utils/retry";
++import { publishToDlq } from "../queue/deadLetter";
+ 
+ export async function handlePaymentWebhook(event) {
+-  return processPaymentEvent(event);
++  try {
++    return await withExponentialBackoff(() => processPaymentEvent(event), { maxRetries: 5 });
++  } catch (error) {
++    await publishToDlq("payment-webhook", event, error);
++    throw error;
++  }
+ }

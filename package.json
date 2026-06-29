@@ -1,0 +1,40 @@
+{
+  "name": "pr-intelligence-agent",
+  "version": "0.1.0",
+  "description": "RAG-based agent that generates production-ready PR descriptions from Jira tickets, code diffs, and internal docs.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "setup:pinecone": "tsx src/cli/setupPinecone.ts",
+    "index": "tsx src/cli/indexDocuments.ts",
+    "generate": "tsx src/cli/generatePr.ts",
+    "eval": "tsx src/cli/runEvaluation.ts",
+    "docs:pdf": "node scripts/generate-tdd-pdf.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.6",
+    "@types/node": "^24.10.13",
+    "md-to-pdf": "^5.2.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@langchain/classic": "^1.0.17",
+    "@langchain/community": "^1.1.15",
+    "@langchain/core": "^1.1.24",
+    "@langchain/openai": "^1.2.7",
+    "@langchain/pinecone": "^1.0.1",
+    "@langchain/textsplitters": "^1.0.1",
+    "@pinecone-database/pinecone": "^5.1.2",
+    "cli-progress": "^3.12.0",
+    "dotenv": "^16.6.1",
+    "langchain": "^1.2.24",
+    "zod": "^3.25.76"
+  }
+}
